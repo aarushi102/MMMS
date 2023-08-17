@@ -1,0 +1,57 @@
+body{
+	
+	background: url("pexelrainbow.jpg") no-repeat center center/1400px 1100px;
+}
+a {
+	color: #4d769e;
+}
+#edit-student{
+	color: #e3e3e3;
+	margin: 0px; 
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	font-family: georgia;
+	font-size: 30px;
+	line-height: 40px;
+}
+#edit-student form input[type="submit"]{
+	box-sizing: border-box;
+	background:none;
+	border: double;
+	border-radius: 40px;
+	font-size: 15px;
+	font-family: verdana;
+	text-decoration: none;
+	color: white;
+	padding: 0px 28px;
+	margin: 0px 0px;
+	cursor: pointer;
+}
+#left_side input[type="submit"]{
+	margin:0px 15px;
+	width: 280px;
+	background: linear-gradient(45deg,#314459,#4d769e,#b4d3ed);
+	background-size: 200%;
+	box-shadow: 0px 0px 50px rgba(10,100,180,0.5);
+	}
+#stu_detail{
+	font-family:georgia;
+	font-size: 25px;
+	height: 400px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,1);
+	line-height: 38px;
+}
+h1{
+	color:white;
+	font-size: 40px;
+	text-shadow: 0px 0px 20px  black;
+}
+#top_span{
+	color:purple;
+
+}
+#table1{
+	background: rgba(0,0,0,0.5);
+}
+

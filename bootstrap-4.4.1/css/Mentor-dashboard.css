@@ -1,0 +1,72 @@
+body{
+	
+	background: url("pexelleaf.jpg") no-repeat center center/1400px 1100px;
+}
+#edit-teacher{
+	color: #e3e3e3;
+	margin: 0px; 
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	font-family: georgia;
+	font-size: 30px;
+	line-height: 40px;
+	text-shadow: 3px 3px 3px black;
+	line-height: 45px;
+}
+#edit-teacher form input[type="submit"]{
+	box-sizing: border-box;
+	background:none;
+	border: double;
+	border-radius: 40px;
+	font-size: 15px;
+	font-family: verdana;
+	text-decoration: none;
+	color: white;
+	padding: 10px 80px;
+	margin: 10px 0px;
+	cursor: pointer;
+	text-shadow: 3px 3px 3px black;
+}
+#left_side input[type="submit"]{
+	margin:10px 15px;
+	width: 280px;
+	background: linear-gradient(45deg,#0b5728	,#0e6127,#348251,#69c98d);
+	background-size: 200%;
+	box-shadow: 0px 0px 50px rgba(10,70,10,0.5);
+	}
+#teacher_detail{
+	font-family: georgia;
+	font-size: 26px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,1);
+	line-height: 48px;
+	color: white;
+	margin: 0px; 
+	top: 50%;
+	left: 0%;
+	transform: translate(70%,-5%);
+	padding: 20px 50px;
+	background-color: #abbfed;
+	background:rgba(0,0,0,0.4);
+	visibility: visible;
+	border-radius: 15px;
+	width: 400px;
+	height: 430px;
+}
+h1{
+	color:white;
+	font-size: 40px;
+	text-shadow: 0px 0px 20px  black;
+}
+#top_span{
+
+	color: white;
+
+}
+a{
+	color: #69c98d
+}
+
+#table1{
+	background: rgba(0,0,0,0.5);
+}

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P.2.ACADEMIC PERFORMANCE</title>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+     <?php
+    session_start();
+    $connection = mysqli_connect("localhost","root","");
+    $db = mysqli_select_db($connection,"sms.sql");
+  ?>
+
+    <h1>Mentee's Academic Performance</h1>
+
+</head>
+<body>
+
+  <?php
+
+    $r_no = (isset($_GET['r_no']) ? $_GET['r_no'] : '');
+    
+    $query= 'SELECT * from activities WHERE r_no='.$r_no;
+    $query_run = mysqli_query($connection,$query);
+    
+    while ($row = mysqli_fetch_assoc($query_run)) 
+  {
+      ?>
+
+        <center><h1><b><?php 
+                            echo "Roll number:". $_GET['r_no'];
+                    ?></b></h1></center>
+      
+    
+    
+
+
+      <form action=" " method="POST">
+ 
+                    <input type="text" name="r_no" value="<?php echo $r_no ?>" hidden>
+    <table align="center" border="1" height="700px" width="70%" cellspacing="0">
+      <tr>
+          <td align="center" height="50px" width="10%" style="font-size: 18px;">
+              <b>Semester</b>
+          </td>
+
+          <td align="center" height="50px" width="10%" style="font-size: 18px;">
+            <b>Subjet</b>
+        </td>
+
+        <td align="center" height="50px" width="10%" colspan="2" style="font-size: 18px;">
+            <b>IA1</b>
+        </td>
+
+        <td align="center" height="50px" width="10%" colspan="2" style="font-size: 18px;">
+            <b>IA2</b>
+        </td>
+
+        <td align="center" height="50px" width="15%" colspan="2" style="font-size: 18px;">
+            <b>Prelim</b>
+        </td>
+
+        <td align="center" height="50px" width="15%" colspan="2" style="font-size: 18px;">
+            <b>End semester
+                Exam (SGPI)</b>
+        </td>
+
+      </tr>
+
+      <tr>
+          <td align="center" rowspan="2" width="10%">
+              <b>I</b>
+          
+          <td align="center" height="25px" rowspan="1" width="10%">
+              <b>Performance</b>
+          </td>
+
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+            C  <input type="radio" name="ia1clear"> 
+        </td>
+
+        <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+            N/C  <input type="radio" name="A1clear">
+        </td>
+
+
+        <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+            C  <input type="radio" name="A2clear"> 
+        </td>
+
+        <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+            N/C  <input type="radio" name="A2clear">
+        </td>
+
+        <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+            C  <input type="radio" name="prelim"> 
+        </td>
+
+        <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+            N/C  <input type="radio" name="prelim">
+        </td>
+
+        <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+            C  <input type="radio" name="endSemExam"> 
+        </td>
+
+        <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+            N/C  <input type="radio" name="endSemExam">
+        </td>
+
+        </td>
+        </tr>
+
+        <tr>
+            <td align="center" height="25px" rowspan="1" width="10%">
+                <b>Remarks</b>
+            </td>
+
+            <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                <textarea name="" id=""style="margin: 0px; width: 98%; height: 80%;"></textarea>
+            </td>
+
+            <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+            </td>
+
+            <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;" ></textarea>
+            </td>
+
+            <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+            </td>
+   
+        </tr>
+
+        <tr>
+            <td align="center" rowspan="2" width="10%">
+                <b>II</b>
+            
+            <td align="center" height="25px" rowspan="1" width="10%">
+                <b>Performance</b>
+            </td>
+  
+            <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A1clear2"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A1clear2">
+          </td>
+  
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A2clear2"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A2clear2">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="prelim2"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="prelim2">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="endSemExam2"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="endSemExam2">
+          </td>
+  
+          </td>
+          </tr>
+  
+          <tr>
+              <td align="center" height="25px" rowspan="1" width="10%">
+                  <b>Remarks</b>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id=""style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;" ></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+     
+          </tr>
+
+          <tr>
+            <td align="center" rowspan="2" width="10%">
+                <b>III</b>
+            
+            <td align="center" height="25px" rowspan="1" width="10%">
+                <b>Performance</b>
+            </td>
+  
+            <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A1clear3"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A1clear3">
+          </td>
+  
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A2clear3"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A2clear3">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="prelim3"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="prelim3">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="endSemExam3"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="endSemExam3">
+          </td>
+  
+          </td>
+          </tr>
+  
+          <tr>
+              <td align="center" height="25px" rowspan="1" width="10%">
+                  <b>Remarks</b>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id=""style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;" ></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+     
+          </tr>
+
+          <tr>
+            <td align="center" rowspan="2" width="10%">
+                <b>IV</b>
+            
+            <td align="center" height="25px" rowspan="1" width="10%">
+                <b>Performance</b>
+            </td>
+  
+            <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A1clear4"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A1clear4">
+          </td>
+  
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A2clear4"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A2clear4">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="prelim4"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="prelim4">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="endSemExam4"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="endSemExam4">
+          </td>
+  
+          </td>
+          </tr>
+  
+          <tr>
+              <td align="center" height="25px" rowspan="1" width="10%">
+                  <b>Remarks</b>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id=""style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;" ></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+     
+          </tr>
+
+          <tr>
+            <td align="center" rowspan="2" width="10%">
+                <b>V</b>
+            
+            <td align="center" height="25px" rowspan="1" width="10%">
+                <b>Performance</b>
+            </td>
+  
+            <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A1clear5"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A1clear5">
+          </td>
+  
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A2clear5"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A2clear5">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="prelim5"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="prelim5">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="endSemExam5"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="endSemExam5">
+          </td>
+  
+          </td>
+          </tr>
+  
+          <tr>
+              <td align="center" height="25px" rowspan="1" width="10%">
+                  <b>Remarks</b>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id=""style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;" ></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+     
+          </tr>
+
+          <tr>
+            <td align="center" rowspan="2" width="10%">
+                <b>VI</b>
+            
+            <td align="center" height="25px" rowspan="1" width="10%">
+                <b>Performance</b>
+            </td>
+  
+            <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A1clear6"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A1clear6">
+          </td>
+  
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A2clear6"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A2clear6">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="prelim6"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="prelim6">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="endSemExam6"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="endSemExam6">
+          </td>
+  
+          </td>
+          </tr>
+  
+          <tr>
+              <td align="center" height="25px" rowspan="1" width="10%">
+                  <b>Remarks</b>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id=""style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;" ></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+     
+          </tr>
+
+          <tr>
+            <td align="center" rowspan="2" width="10%">
+                <b>VII</b>
+            
+            <td align="center" height="25px" rowspan="1" width="10%">
+                <b>Performance</b>
+            </td>
+  
+            <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A1clear7"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A1clear7">
+          </td>
+  
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A2clear7"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A2clear7">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="prelim7"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="prelim7">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="endSemExam7"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="endSemExam7">
+          </td>
+  
+          </td>
+          </tr>
+  
+          <tr>
+              <td align="center" height="25px" rowspan="1" width="10%">
+                  <b>Remarks</b>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id=""style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;" ></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+     
+          </tr>
+
+          <tr>
+            <td align="center" rowspan="2" width="10%">
+                <b>VIII</b>
+            
+            <td align="center" height="25px" rowspan="1" width="10%">
+                <b>Performance</b>
+            </td>
+  
+            <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A1clear8"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A1clear8">
+          </td>
+  
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="A2clear8"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="A2clear8">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="prelim8"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="prelim8">
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              C  <input type="radio" name="endSemExam8"> 
+          </td>
+  
+          <td align="center" height="25px" rowspan="1" colspan="1" width="10%">
+              N/C  <input type="radio" name="endSemExam8">
+          </td>
+  
+          </td>
+          </tr>
+  
+          <tr>
+              <td align="center" height="25px" rowspan="1" width="10%">
+                  <b>Remarks</b>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id=""style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;" ></textarea>
+              </td>
+  
+              <td align="center" height="25px" rowspan="1" colspan="2" width="10%">
+                  <textarea name="" id="" style="margin: 0px; width: 98%; height: 80%;"></textarea>
+              </td>
+     
+          </tr>
+     
+          </tr>
+          </table>
+
+          <br>
+          <table align="center" height="30px" width="10%">
+            <tr>
+                <td>
+                    <input type="submit" name="Submit">
+                </td>
+            </tr>
+        </table>
+        <center><input type="submit" name="submit_feedback"></center>
+
+      </form>
+  <?php
+          
+      }
+      ?>
+            
+        <br><br>
+        <b>NOTE:</b>
+        <p> 1. C - Cleared, write percentage or SGPI in Remarks.
+            <br>
+            2. N/C - write subjects not cleared in Remarks.
+           <br>
+            3. If students cleared subjects in next academic year kindly circle “N/C” and click On “C”</p>
+          </body>
+          </html>

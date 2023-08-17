@@ -1,0 +1,26 @@
+*{
+	padding: 0;
+	
+}
+body{
+	background: linear-gradient(0deg, rgba(166,50,54,1) 0%, rgba(226,52,86,1) 50%, rgba(254,214,65,1) 80%);
+}
+#title{
+	padding: 10px;
+	background:rgba(166,50,54,0.8);
+
+	color: #fed641;
+}
+table{
+	border: 3px solid rgba(254,214,65,1);
+	border-radius: 25px;
+	background: rgba(0,0,0,0.5);
+	color: #ff8ca3;
+	padding: 15px;
+	font-size: 18px;
+}
+td{
+	
+	border: 0px ;
+
+}
